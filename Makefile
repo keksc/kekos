@@ -2,7 +2,7 @@ include buildScripts/cfg.mk
 
 all: $(BUILD_DIR)/$(OUT_FILENAME)
 
-$(BUILD_DIR)/$(OUT_FILENAME): bootloader# kernel
+$(BUILD_DIR)/$(OUT_FILENAME): bootloader kernel
 	@dd if=/dev/zero of=$@ bs=512 count=2880 > /dev/null
 	@mkfs.fat -F 12 -n "KEKOS" $@ > /dev/null
 	@dd if=$(BUILD_DIR)/stage1.bin of=$@ conv=notrunc > /dev/null
@@ -23,7 +23,7 @@ $(BUILD_DIR)/stage2.bin: $(wildcard $(SRC_DIR)/bootloader/stage2/*)
 kernel: $(BUILD_DIR)/kernel.bin
 
 $(BUILD_DIR)/kernel.bin:
-	@$(MAKE) -C $(SRC_DIR)/kernel BUILD_DIR=$(abspath $(BUILD_DIR)) > /dev/null
+	@$(MAKE) -C $(SRC_DIR)/kernel BUILD_DIR=$(abspath $(BUILD_DIR))
 
 run:
 	qemu-system-i386 -fda $(BUILD_DIR)/$(OUT_FILENAME)
