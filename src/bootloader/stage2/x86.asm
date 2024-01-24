@@ -1,4 +1,4 @@
-extern LoadGDT
+extern loadGDT
 
 %macro x86_EnterRealMode 0
     [bits 32]
@@ -28,7 +28,7 @@ extern LoadGDT
 
 %macro x86_EnterProtectedMode 0
     cli
-    call LoadGDT
+    call loadGDT
 
     ; 4 - set protection enable flag in CR0
     mov eax, cr0

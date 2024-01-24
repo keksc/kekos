@@ -26,7 +26,7 @@ $(BUILD_DIR)/kernel.bin:
 	@$(MAKE) -C $(SRC_DIR)/kernel BUILD_DIR=$(abspath $(BUILD_DIR))
 
 run:
-	qemu-system-i386 -fda $(BUILD_DIR)/$(OUT_FILENAME)
+	@qemu-system-i386 -drive file=$(BUILD_DIR)/$(OUT_FILENAME),format=raw
 
 debug:
 	bochs -f bochs_cfg

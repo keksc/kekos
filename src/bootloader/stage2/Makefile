@@ -1,3 +1,5 @@
+ASM=nasm
+TARGET_CC=i686-elf-gcc
 TARGET_ASMFLAGS += -f elf
 TARGET_CFLAGS += -ffreestanding -nostdlib
 TARGET_LIBS += -lgcc
