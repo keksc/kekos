@@ -1,6 +1,8 @@
 #include "screen.h"
 #include "ioports.h"
 
+#include <stdarg.h>
+
 const unsigned screenW = 80;
 const unsigned screenH = 25;
 const uint8_t defaultCol = 0x7;
@@ -67,4 +69,8 @@ void clearScreen() {
   cursor[0] = 0;
   cursor[1] = 0;
   setCursor(0, 0);
+}
+
+void printf(const char *fmt, ...) {
+  va_list args;
 }

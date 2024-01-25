@@ -160,7 +160,7 @@ void printf_signed(long long number, int radix)
 #define PRINTF_LENGTH_LONG          3
 #define PRINTF_LENGTH_LONG_LONG     4
 
-void printf(const char* fmt, ...)
+void printff(const char* fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
