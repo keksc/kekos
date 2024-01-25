@@ -6,10 +6,10 @@
 void __attribute((cdecl)) start(uint16_t bootDrive) {
   clearScreen();
   
-  for(int i = 0; i < 35; i++) {
-    printC('s');
-    printC('\n');
-  }
+  // for(int i = 0; i < 35; i++) {
+  //   printC('s');
+  //   printC('\n');
+  // }
 
   const int wantedW = 1920;
   const int wantedH = 1080;
