@@ -2,9 +2,11 @@
 #include "x86.h"
 #include "memory.h"
 
+int __attribute__((cdecl)) getVBEInfo(void* infoOut);
+
 bool VBE_GetControllerInfo(VbeInfoBlock* info)
 {
-    if (x86_Video_GetVbeInfo(info) == 0)
+    if (getVBEInfo(info) == 0)//x86_Video_GetVbeInfo(info) == 0)
     {
         // convert from seg:off to a linear address
         info->VideoModePtr = SEGOFF2LIN(info->VideoModePtr);

@@ -30,3 +30,6 @@ run:
 
 debug:
 	bochs -f bochs_cfg
+
+clean:
+	rm -rf build/*

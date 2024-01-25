@@ -1,6 +1,6 @@
 #include "fat.h"
 #include "stdio.h"
-#include "memdefs.h"
+#include "memdefss.h"
 #include "string.h"
 #include "memory.h"
 #include "ctype.h"
